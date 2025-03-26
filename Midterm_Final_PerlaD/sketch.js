@@ -74,7 +74,7 @@ function draw(){
   ellipse(180,750,500,500);//x,y,width,tall
   //house
   fill(245, 196, 118);
-  rect(85,350,200,200;)//x,y
+  rect(85,350,200,200);//x,y
   fill(r, g, b);
   triangle(85,350,185,250,285,350);
   rect(144,450,80,100);
