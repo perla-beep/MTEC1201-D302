@@ -12,17 +12,17 @@ let t2= 4000;
 let xLocation=0;
 
 let xa1=550;
-let xa2=580
-let xa3=630
-let xa4=670
-let ya1=420
-let ya2=480
-let ya3=430
-let ya4=490
+let xa2=580;
+let xa3=630;
+let xa4=670;
+let ya1=420;
+let ya2=480;
+let ya3=430;
+let ya4=490;
 
-let r=250
-let g=179
-let b=65
+let r=250;
+let g=179;
+let b=65;
 
 function setup(){
   createCanvas(1000,900) //y , x
@@ -35,16 +35,16 @@ function draw(){
   ellipse(800,100,100,100);
 
   if(Time>t1){
-  background(3, 23, 97)
+  background(3, 23, 97);
   fill(190, 195, 212);
   ellipse(800,100,100,100);
-  fill(245, 242, 105)
-  star(300,300)
-  star(470,120)
-  star(800,450)
-  star(100,250)
-  star(600,350)
-  star(700,50)
+  fill(245, 242, 105);
+  star(300,300);
+  star(470,120);
+  star(800,450);
+  star(100,250);
+  star(600,350);
+  star(700,50);
   }
   Time=millis();
 
@@ -69,34 +69,34 @@ function draw(){
 
   //landscape
   noStroke();
-  fill(123, 242, 104)
-  rect(0,650,1000,500)
-  ellipse(180,750,500,500)//x,y,width,tall
+  fill(123, 242, 104);
+  rect(0,650,1000,500);
+  ellipse(180,750,500,500);//x,y,width,tall
   //house
-  fill(245, 196, 118)
-  rect(85,350,200,200)//x,y
-  fill(r, g, b)
-  triangle(85,350,185,250,285,350)
-  rect(144,450,80,100)
+  fill(245, 196, 118);
+  rect(85,350,200,200;)//x,y
+  fill(r, g, b);
+  triangle(85,350,185,250,285,350);
+  rect(144,450,80,100);
   //road
-  fill(87, 86, 84)
-  rect(0,700,1000,170)
-  stroke(247, 170, 15)
-  strokeWeight(10)
-  line(0,780,100,780)
-  line(200,780,300,780)
-  line(400,780,500,780)
-  line(600,780,700,780)
-  line(800,780,900,780)
-  line(1000,780,1100,780)
+  fill(87, 86, 84);
+  rect(0,700,1000,170);
+  stroke(247, 170, 15);
+  strokeWeight(10);
+  line(0,780,100,780);
+  line(200,780,300,780);
+  line(400,780,500,780);
+  line(600,780,700,780);
+  line(800,780,900,780);
+  line(1000,780,1100,780);
 
   //apples
-  fill(255,0,0)
+  fill(255,0,0);
   noStroke();
-  ellipse(xa1,ya1,30)
-  ellipse(xa2,ya2,30)
-  ellipse(xa3,ya3,30)
-  ellipse(xa4,ya4,30)
+  ellipse(xa1,ya1,30);
+  ellipse(xa2,ya2,30);
+  ellipse(xa3,ya3,30);
+  ellipse(xa4,ya4,30);
   if (ya1 < 650) {
     ya1 ++;
   }
@@ -110,24 +110,24 @@ function draw(){
     ya4 += 2;
   }
 
-  flower(200,600)
-  flower(100,550)
-  flower(300,520)
-  flower(50,600)
-  flower(350,580)
-  flower(800,620)
-  flower(900,625)
+  flower(200,600);
+  flower(100,550);
+  flower(300,520);
+  flower(50,600);
+  flower(350,580);
+  flower(800,620);
+  flower(900,625);
 
   //car
   fill(0)
   noStroke();
-  ellipse(xLocation-30,740,30,30)
-  ellipse(xLocation+30,740,30,30)
-  fill(250, 142, 187)
-  ellipse(xLocation,700,120,80)
-  fill(95, 145, 237,180)
-  ellipse(xLocation+30,690,40,30)
-  fill(243, 247, 119)
+  ellipse(xLocation-30,740,30,30);
+  ellipse(xLocation+30,740,30,30);
+  fill(250, 142, 187);
+  ellipse(xLocation,700,120,80);
+  fill(95, 145, 237,180);
+  ellipse(xLocation+30,690,40,30);
+  fill(243, 247, 119);
   xLocation=xLocation=xLocation+1
   xLocation+=3;
   if(xLocation>1000){
@@ -170,12 +170,12 @@ function flower(x,y){
 }
 
 function star(x,y){
-ellipse(x,y,10,30)
-ellipse(x,y,30,10)
+ellipse(x,y,10,30);
+ellipse(x,y,30,10);
 }
 
 function mousePressed(){
-  r = random(233)
-  g = random(150)
-  b = random(70)
+  r = random(233);
+  g = random(150);
+  b = random(70);
 }
