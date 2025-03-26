@@ -1,8 +1,8 @@
 
 //Perla De Santiago
-// Instuctions: Press R to make the apples fall and F to put them back
-// Press N to turn it into night time
-// Press D to turn it into day time
+// Instuctions: Press r to make the apples fall and f to put them back
+// Press n to turn it into night time
+// Press d to turn it into day time
 // Click LMB to change the color of the roof and door
 // 
 
