@@ -8,7 +8,6 @@
 
 let Time = 0;
 let t1= 3000;
-let t2= 4000;
 let xLocation=0;
 
 let xa1=550;
@@ -47,11 +46,8 @@ function draw(){
   star(700,50);
   }
   Time=millis();
-
-  if (Time>t2){
-    keyPressed();
-  }
   
+
   //tree
   strokeWeight(50);
   stroke(99, 58, 39);
@@ -130,28 +126,34 @@ function draw(){
   fill(243, 247, 119);
   xLocation=xLocation=xLocation+1
   xLocation+=3;
-  if(xLocation>1000){
+  if(xLocation>1100){
     xLocation=0;
   }
 }
 
 function keyPressed(){
-  if (key === 'f'){
+  if (key === 'f' || key === 'F'){
     ya1=420
     ya2=480
     ya3=430
     ya4=490
   }
-   if (key === 'd'){
-    if (t2<Time){
+  
+   if (key === 'd' || key === 'D'){
   background(113, 192, 245);
   fill(247, 243, 10);
   noStroke();
   ellipse(800,100,100,100);
-    }
+
   }
-  if(key === 'n')
+  if(key === 'n'|| key === 'N')
     t1=3000
+  if(key === 'r'|| key === 'R'){
+    ya1++
+    ya2++
+    ya3+=5
+    ya4 +=2
+  }
 }
 
 
