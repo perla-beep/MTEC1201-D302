@@ -8,7 +8,9 @@
 
 let Time = 0;
 let t1= 3000;
+let t2= 4000;
 let xLocation=0;
+let xLocation2 = 1100;
 
 let xa1=550;
 let xa2=580;
@@ -46,8 +48,10 @@ function draw(){
   star(700,50);
   }
   Time=millis();
-  
 
+    keyPressed();
+  
+  
   //tree
   strokeWeight(50);
   stroke(99, 58, 39);
@@ -93,19 +97,7 @@ function draw(){
   ellipse(xa2,ya2,30);
   ellipse(xa3,ya3,30);
   ellipse(xa4,ya4,30);
-  if (ya1 < 650) {
-    ya1 ++;
-  }
-  if (ya2 < 650) {
-    ya2 ++;
-  }
-  if (ya3 < 650){
-    ya3 += 5
-  }
-  if (ya4 < 650) {
-    ya4 += 2;
-  }
-
+  
   flower(200,600);
   flower(100,550);
   flower(300,520);
@@ -129,31 +121,57 @@ function draw(){
   if(xLocation>1100){
     xLocation=0;
   }
+//WHERE IS MY CAR?
+  ellipse(xLocation2-30,820,30,30);
+  ellipse(xLocation2+30,820,30,30);
+  fill(250, 142, 187);
+  ellipse(xLocation2,780,120,80);
+  fill(95, 145, 237,180);
+  ellipse(xLocation2-30,770,40,30);
+  fill(243, 247, 119);
+  xLocation2=xLocation2=xLocation2+1
+  xLocation2+=3;
+  if(xLocation2<0){
+    xLocation2=1100;
+  }
 }
 
+
+
 function keyPressed(){
-  if (key === 'f' || key === 'F'){
+  if (key === 'f'|| key ==='F'){
     ya1=420
     ya2=480
     ya3=430
     ya4=490
+    background(113, 192, 245);
+  fill(247, 243, 10);
+  noStroke();
+  ellipse(800,100,100,100);
   }
-  
    if (key === 'd' || key === 'D'){
+    if (t2<Time){
   background(113, 192, 245);
   fill(247, 243, 10);
   noStroke();
   ellipse(800,100,100,100);
-
+    }
   }
   if(key === 'n'|| key === 'N')
     t1=3000
-  if(key === 'r'|| key === 'R'){
-    ya1++
-    ya2++
-    ya3+=5
-    ya4 +=2
-  }
+  if(key === 'r' || key === 'R')
+    if (ya1 < 650) {
+      ya1 ++;
+    }
+    if (ya2 < 650) {
+      ya2 ++;
+    }
+    if (ya3 < 650){
+      ya3 += 5
+    }
+    if (ya4 < 650) {
+      ya4 += 2;
+    }
 }
 
 
