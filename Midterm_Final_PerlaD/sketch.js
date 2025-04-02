@@ -10,7 +10,7 @@ let Time = 0;
 let t1= 3000;
 let t2= 4000;
 let xLocation=0;
-let xLocation2 = 1100;
+let xLocationa = 1100;
 
 let xa1=550;
 let xa2=580;
@@ -49,8 +49,8 @@ function draw(){
   }
   Time=millis();
 
-    keyPressed();
-  
+  keyPressed();
+
   textSize(20)
   textAlign(LEFT,TOP);
   text("Instructions: Press r to make the apples fall and f to put them back. Press n to make it night and d to make it day. Click LMB to change the color of the roof and door",0,0,400,500)
@@ -118,24 +118,24 @@ function draw(){
   ellipse(xLocation,700,120,80);
   fill(95, 145, 237,180);
   ellipse(xLocation+30,690,40,30);
-  fill(243, 247, 119);
   xLocation=xLocation=xLocation+1
   xLocation+=3;
   if(xLocation>1100){
     xLocation=0;
   }
-//WHERE IS MY CAR?
-  ellipse(xLocation2-30,820,30,30);
-  ellipse(xLocation2+30,820,30,30);
-  fill(250, 142, 187);
-  ellipse(xLocation2,780,120,80);
+
+  fill(0)
+  ellipse(xLocationa-30,820,30,30);
+  ellipse(xLocationa+30,820,30,30);
+  fill(179, 159, 252);
+  ellipse(xLocationa,780,120,80);
   fill(95, 145, 237,180);
-  ellipse(xLocation2-30,770,40,30);
-  fill(243, 247, 119);
-  xLocation2=xLocation2=xLocation2+1
-  xLocation2+=3;
-  if(xLocation2<0){
-    xLocation2=1100;
+  ellipse(xLocationa-30,770,40,30);
+  xLocationa=xLocationa=xLocationa+1
+  xLocationa += -7;
+  if(xLocationa<0){
+    xLocationa=1000;
+    xLocationa+= -1;
   }
 }
 
@@ -162,7 +162,7 @@ function keyPressed(){
   }
   if(key === 'n'|| key === 'N')
     t1=3000
-  if(key === 'r' || key === 'R')
+  if(key === 'r' || key === 'R')// boolean 
     if (ya1 < 650) {
       ya1 ++;
     }
