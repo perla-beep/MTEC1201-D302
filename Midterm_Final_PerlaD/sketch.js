@@ -51,7 +51,10 @@ function draw(){
 
     keyPressed();
   
-  
+  textSize(20)
+  textAlign(LEFT,TOP);
+  text("Instructions: Press r to make the apples fall and f to put them back. Press n to make it night and d to make it day. Click LMB to change the color of the roof and door",0,0,400,500)
+
   //tree
   strokeWeight(50);
   stroke(99, 58, 39);
