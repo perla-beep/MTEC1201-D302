@@ -1,3 +1,5 @@
+// click door to enter inside house
+
 let scene = 1;
 
 function setup() {
@@ -64,7 +66,9 @@ function scene1(){ // outside house
 
 function scene2(){ // inside house
   background(243, 255, 153)
- 
+  fill(0)
+  quad(150,400,100,800,700,800,700,400,)
+  //quad(x,y,x,y,x,y,x,y,)
   //rect(x,y,w,h)
 }
 
