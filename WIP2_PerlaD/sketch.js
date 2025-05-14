@@ -1,9 +1,10 @@
+let scene = 1;
+
 function setup() {
   createCanvas(800, 800);
 }
 
 function draw() {
-  scene1();
   if (scene == 1){
     scene1();
   }
