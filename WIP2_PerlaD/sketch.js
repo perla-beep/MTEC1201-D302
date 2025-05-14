@@ -3,6 +3,7 @@ function setup() {
 }
 
 function draw() {
+  scene1();
   if (scene == 1){
     scene1();
   }
@@ -30,7 +31,7 @@ function Tree(x,y){
   pop();
 }
 
-function scene1(){
+function scene1(){ // outside house
   background(195, 236, 250);
   stroke(0)
 
@@ -55,33 +56,14 @@ function scene1(){
   ellipse(400,440,45,45)
   rect(378,440,45,60)
  
-  Tree(200,300)
+  Tree(150,300)
 
 }
 }
 
-function scene2(){
+function scene2(){ // inside house
   background(243, 255, 153)
  
-  fill(3, 79, 23)
-  rect(0,450,width,height/2)
- 
-  //road
-  fill(62, 64, 62)
-  triangle(250,800,400,400,550,800)
- 
-  //house
-  fill(243, 255, 153)
-  rect(300,350,200,150)
-
-  fill(253,164,117)
-  triangle(300,350,500,350,400,250)
- 
-  //door
-  noStroke();
-  fill(232, 219, 102)
-  ellipse(400,440,45,45)
-  rect(378,440,45,60)
   //rect(x,y,w,h)
 }
 
