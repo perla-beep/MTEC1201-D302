@@ -65,10 +65,19 @@ function scene1(){ // outside house
 }
 
 function scene2(){ // inside house
-  background(243, 255, 153)
-  fill(0)
-  quad(150,400,100,800,700,800,700,400,)
-  //quad(x,y,x,y,x,y,x,y,)
+  background(275)
+  stroke(0)
+  fill(221, 166, 237)//ceiling color
+  line(0,800,200,600)
+  line(0,0,200,200)
+  line(800,0,600,200)
+  line(800,800,600,600)
+  fill(255, 194, 240)//wall color
+  quad(0,0,0,800,200,600,200,200)
+  rect(200,200,400,400)
+  quad(800,800,600,600,600,200,800,0)
+  fill(178, 250, 170)// floor color
+  quad(0,800,200,600,600,600,800,800)
   //rect(x,y,w,h)
 }
 
