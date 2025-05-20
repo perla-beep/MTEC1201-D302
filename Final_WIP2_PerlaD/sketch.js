@@ -1,10 +1,17 @@
 // click door to enter inside house
-// F to be able to add flowers to grass
+// P to be able to add flowers to grass
 // R to reset flowers
 
-let scene = 1;
+let scene = 3;
 let flowers = [];
+let open = 0
 
+
+function preload(){
+  mh = loadImage("images/mousehouse.png")
+  doll = loadImage("images/doll.png")
+  mh2 = loadImage("images/mousehousev2.png")
+}
 
 function setup() {
   createCanvas(800, 800);
@@ -20,13 +27,21 @@ function draw() {
     scene2();
   }
 
-function Tree(x,y){
+  if (scene == 3){
+    scene3();
+  }
+
+  if (scene == 4){
+    scene4();
+  }
+
+function Tree(x,y,r,g,b){
   push();
   strokeWeight(50);
   stroke(99, 58, 39);
   rect(x,y,5,200)
 
-  fill(46, 120, 48);
+  fill(r,g,b);
   stroke(46, 120, 48)
   circle(x,y-50,80);
   circle(x-50,y-20,80);
@@ -36,13 +51,13 @@ function Tree(x,y){
   pop();
 }
 
-function Window(x,y){
+function Window(x,y,r,g,b){
   push();
   rectMode(CENTER);
 
   stroke(255); // White outline
   strokeWeight(6);
-  fill(135, 206, 250); // Light blue window glass
+  fill(r, g, b); // Light blue window glass
   rect(x, y, 50, 50); // Outer window
 
   stroke(255);
@@ -88,10 +103,10 @@ function scene1(){ // outside house
   ellipse(400,440,45,45)
   rect(378,440,45,60)
  
-  Window(340,420)
-  Window(460,420)
-  Tree(150,300)
-  Tree(650,300)
+  Window(340,420,135, 206, 250)
+  Window(460,420,135, 206, 250)
+  Tree(150,300,46, 120, 48)
+  Tree(650,300,46, 120, 48)
 
   for (let i = 0; i < flowers.length; i++) {
     flowers[i].sway();
@@ -115,18 +130,34 @@ function scene2(){ // inside house
   quad(800,800,600,600,600,200,800,0)
   fill(178, 250, 170)// floor color
   quad(0,800,200,600,600,600,800,800)
+  
+  noStroke();
+  fill(51, 51, 51)
+  ellipse(230,580,20,20)
+  rect(220,580,20,20)
 
   Back(380,750);
   //rect(x,y,w,h)
 }
 
+function scene3(){ // mouse home
+  image(mh,0,0,width,height)
+  image(doll,640,550,100,100)
 
+  Back(380,750);
+}
 
+function scene4(){ //mouse house scary
+  image(mh2,0,0,width,height)
+  fill(0)
+  rect(0, 0, width, height / 2 * (1 - open))
+  rect(0, height- height / 2 * (1 - open), width, height / 2 * (1 - open))
+  if (open < 1) {
+    open += 0.0040; 
+  }
 
-
-
-
-
+  Back(380,750);
+}
 
 
 
@@ -139,6 +170,21 @@ function mousePressed(){
   else if(scene == 2 && mouseX > 380 && mouseX<423 && mouseY > 750 && mouseY<800) {
     scene = 1
   }
+
+  if(scene == 2 && mouseX > 220 && mouseX < 240 && mouseY > 560 && mouseY < 600){
+    scene = 3
+  }
+  else if(scene == 3 && mouseX > 380 && mouseX<423 && mouseY > 750 && mouseY<800) {
+    scene = 2
+}
+
+  if(scene == 3 && mouseX > 640 && mouseX < 740 && mouseY > 550 && mouseY < 650){
+    scene = 4
+  }
+  else if(scene == 4 && mouseX > 380 && mouseX<423 && mouseY > 750 && mouseY<800){
+    scene = 5
+  }
+
 }
 
 function keyPressed(){
