@@ -2,7 +2,7 @@
 // P to be able to add flowers to grass
 // R to reset flowers
 
-let scene = 3;
+let scene = 6;
 let flowers = [];
 let open = 0
 
@@ -11,6 +11,13 @@ function preload(){
   mh = loadImage("images/mousehouse.png")
   doll = loadImage("images/doll.png")
   mh2 = loadImage("images/mousehousev2.png")
+  happy = loadImage("images/happyboy.png")
+  sad = loadImage("images/sadboy.png")
+  bg = loadImage("images/s5bg.png")
+  tree1 = loadImage("images/dt1.png")
+  tree2 = loadImage("images/dt2.png")
+  moon = loadImage("images/redmoon.png")
+  candy = loadImage("images/candy.png")
 }
 
 function setup() {
@@ -33,6 +40,14 @@ function draw() {
 
   if (scene == 4){
     scene4();
+  }
+
+  if (scene == 5){
+    scene5();
+  }
+
+  if (scene == 6){
+    scene6();
   }
 
 function Tree(x,y,r,g,b){
@@ -80,6 +95,7 @@ function Back(x,y){
   pop();
 }
 
+
 function scene1(){ // outside house
   background(195, 236, 250);
   stroke(0)
@@ -112,8 +128,10 @@ function scene1(){ // outside house
     flowers[i].sway();
     flowers[i].display();
   }
-
-
+  fill(0)
+  textAlign(CENTER)
+  textSize(20)
+  text("Click door to enter inside the house. Press P to be able to add flowers to grass. Press R to reset flowers",0,600,300,200)
 }
 
 function scene2(){ // inside house
@@ -137,6 +155,7 @@ function scene2(){ // inside house
   rect(220,580,20,20)
 
   Back(380,750);
+  image(happy,320,300,150,150)
   //rect(x,y,w,h)
 }
 
@@ -158,6 +177,52 @@ function scene4(){ //mouse house scary
 
   Back(380,750);
 }
+
+function scene5(){ //inside house v2
+  image(bg,0,0,width,height)
+
+  Back(380,750);
+  image(sad,320,300,150,150)
+}
+
+function scene6(){
+background(31, 1, 1);
+  fill(255, 255,0,80)
+  ellipse(400,400,450,450)
+  fill(201, 201, 28)
+  ellipse(400,400,400,400)
+  stroke(0)
+  fill(0, 20, 6)
+  rect(0,450,width,height/2)
+  fill(20, 20, 20)
+  triangle(250,800,400,400,550,800)
+  fill(40, 1, 61)
+  rect(300,350,200,150)
+  fill(29, 1, 43)
+  triangle(300,350,500,350,400,250)
+  noStroke();
+  fill(255, 255, 255)
+  ellipse(400,440,50,50)
+  rect(376,440,49,60)
+  fill(0)
+  ellipse(400,440,45,45)
+  rect(378,440,45,60)
+
+  Window(340,420,68, 74, 70)
+  Window(460,420,68, 74, 70)
+
+  image(tree1,100,200,300,400)
+  image(tree2,500,200,300,400)
+  image(tree2,600,300,300,400)
+  image(tree2,0,300,300,400)
+
+  fill(255,255,255)
+  textAlign(CENTER)
+  textSize(20)
+  text("Find the hidden candy to go back to how things were",0,750,400,200)
+  image(candy,120,430,30,30)
+}
+
 
 
 
@@ -185,6 +250,25 @@ function mousePressed(){
     scene = 5
   }
 
+  if (scene == 5 && mouseX > 220 && mouseX < 240 && mouseY > 560 && mouseY < 600){
+    scene = 4
+  }
+  else if (scene == 4 && mouseX > 380 && mouseX<423 && mouseY > 750 && mouseY<800){
+    scene = 5
+  }
+  else if (scene == 5 && mouseX > 380 && mouseX<423 && mouseY > 750 && mouseY<800){}
+
+  
+  if (scene == 6 && mouseX > 378 && mouseX < 423 && mouseY > 440 && mouseY<500){
+    scene = 5
+  }
+  else if(scene == 5 && mouseX > 380 && mouseX<423 && mouseY > 750 && mouseY<800){
+    scene = 6
+  }
+
+  if(scene = 6 && mouseX){
+    
+  }
 }
 
 function keyPressed(){
