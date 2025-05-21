@@ -2,7 +2,7 @@
 // P to be able to add flowers to grass
 // R to reset flowers
 
-let scene = 4;
+let scene = 1;
 let flowers = [];
 let open = 0
 //let laugh;
